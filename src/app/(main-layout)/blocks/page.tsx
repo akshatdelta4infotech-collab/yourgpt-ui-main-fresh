@@ -1,3 +1,3 @@
 export default function BlocksPage() {
-  return <div>Blocks</div>;
+  return <div className="p-12 text-center text-muted-foreground">Coming soon...</div>;
 }

@@ -43,6 +43,7 @@
   --radius-xl: calc(var(--radius) + 4px);
 
   --spacing-header: var(--header-height);
+  --spacing-aside: var(--aside-width);
 }
 
 :root {
@@ -116,6 +117,7 @@
 
 :root {
   --header-height: 50px;
+  --aside-width: 240px;
 }
 
 @layer base {
