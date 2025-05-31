@@ -23,7 +23,7 @@ export const Navbar = () => {
   const isActive = (href: string) => pathname === href;
 
   return (
-    <header className="border border-dotted sticky top-0 z-50 bg-background">
+    <header className="border border-dotted border-t-0 sticky top-0 z-50 bg-background">
       <div className="container mx-auto flex items-center justify-between h-header">
         <Link href="/" className="font-semibold flex items-center gap-2">
           <YourGptLogo />
