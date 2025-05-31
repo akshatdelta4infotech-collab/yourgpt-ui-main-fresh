@@ -1,11 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import YourGptLogo from "../logos/yourgpt-logo";
+import YourGptLogo from "./logos/yourgpt-logo";
 import { cn } from "@/lib/utils";
-import { ThemeSwitcher } from "./theme-switcher";
+import { ThemeSwitcher } from "./ui/theme-switcher";
 import { usePathname } from "next/navigation";
-import GitHubLogo from "../logos/github-logo";
+import GitHubLogo from "./logos/github-logo";
 
 const links = [
   {
@@ -23,7 +23,7 @@ export const Navbar = () => {
   const isActive = (href: string) => pathname === href;
 
   return (
-    <header className="border border-dotted">
+    <header className="border border-dotted sticky top-0 z-50 bg-background">
       <div className="container mx-auto flex items-center justify-between h-header">
         <Link href="/" className="font-semibold flex items-center gap-2">
           <YourGptLogo />

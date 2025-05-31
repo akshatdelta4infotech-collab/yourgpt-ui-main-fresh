@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# YourGPT UI Components
+
+An open-source UI component library and design system used by [YourGPT](https://yourgpt.ai/). This repository contains the building blocks and components that power YourGPT's modern and beautiful interface.
+
+## Overview
+
+This library provides a collection of reusable React components, design tokens, and UI patterns built with:
+
+- Next.js 14+
+- Tailwind CSS
+- [shadcn/ui](https://ui.shadcn.com/) - Beautiful and accessible components
+- TypeScript
+
+We've built this library on top of shadcn/ui, an amazing collection of re-usable components that prioritizes accessibility, customization, and developer experience. While shadcn/ui provides the foundation, we've extended it with:
+
+- YourGPT-specific design tokens and themes
+- Additional custom components
+- AI-focused UI patterns and blocks
+- Dark mode optimizations
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+# Install dependencies
+npm install
+
+# Run the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit [http://localhost:3000](http://localhost:3000) to view the component playground and documentation.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Components
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Our component library includes:
 
-## Learn More
+- Buttons and CTAs
+- Alert components
+- Modal dialogs
+- Block-level components
+- And more...
 
-To learn more about Next.js, take a look at the following resources:
+Each component follows our design system guidelines and supports both light and dark modes.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Contributing
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+We welcome contributions! Whether it's:
 
-## Deploy on Vercel
+- Adding new components
+- Improving existing ones
+- Fixing bugs
+- Enhancing documentation
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Please feel free to open issues and pull requests.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+
+MIT License - feel free to use these components in your own projects!
+
+## Credits
+
+This project is built on top of [shadcn/ui](https://ui.shadcn.com/), created by [shadcn](https://twitter.com/shadcn). We're grateful for their work in creating such an excellent foundation for building beautiful, accessible React components.
+
+---
+
+Built with ❤️ by the YourGPT team
