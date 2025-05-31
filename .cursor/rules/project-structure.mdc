@@ -1,0 +1,33 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Project Structure Guidelines
+
+## Directory Organization
+
+The project follows Next.js 14+ App Router structure with shadcn/ui components and Framer Motion animations.
+
+### Key Directories
+
+- `src/app/`: Main application routes and pages using Next.js App Router
+- `src/components/`: Reusable components
+  - `ui/`: shadcn/ui components
+  - `logos/`: Logo and brand-related components
+- `src/lib/`: Utility functions and shared logic
+
+### Component Organization
+
+1. Place all shadcn/ui components in `src/components/ui/`
+2. Custom components should be organized by feature in `src/components/`
+3. Page-specific components go in same page directory in `/(components)` directory
+
+
+
+### File References
+
+Main configuration files:
+- [components.json](mdc:components.json) - shadcn/ui configuration
+- [tailwind.config.js](mdc:tailwind.config.js) - Tailwind CSS configuration
+- [next.config.ts](mdc:next.config.ts) - Next.js configuration
