@@ -1,0 +1,49 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Naming Conventions
+
+## File Naming
+
+1. React Components:
+   - Kebab Case for component files (e.g., `button.tsx`, `user-profile.tsx`)
+   - Use `.tsx` extension for all React components
+
+2. Utility Files:
+   - camelCase for utility files (e.g., `utils.ts`, `animations.ts`)
+   - Use `.ts` extension for non-React files
+
+3. Page Files:
+   - Use `page.tsx` for Next.js pages
+   - Use `layout.tsx` for layout components
+   - Use `loading.tsx` for loading states
+   - Use `error.tsx` for error boundaries
+
+## Component Naming
+
+1. Component Names:
+   - Use Kebab Case for component names
+   - Be descriptive and clear (e.g., `navigation-menu` not `nav-menu`)
+
+2. Props Interfaces:
+   - Suffix with `Props` (e.g., `ButtonProps`)
+
+3. Custom Hooks:
+   - Prefix with `use` (e.g., `useAnimation`, `useTheme`)
+   - Use camelCase after prefix
+
+## CSS Class Naming
+
+1. Tailwind Classes:
+   - Follow Tailwind's utility-first approach
+   - Group related utilities together
+   - Use meaningful class names in `cva` variants
+
+2. Custom Classes:
+   - Use kebab-case for custom class names
+   - Prefix component-specific classes with component name
+   - Keep class names descriptive and semantic
+
+

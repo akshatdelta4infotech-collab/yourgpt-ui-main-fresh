@@ -1,0 +1,53 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Component Development Guidelines
+
+## shadcn/ui Components
+
+1. Use shadcn/ui components as base building blocks
+2. Customize components using the class-variance-authority (cva) pattern
+3. Extend shadcn/ui components instead of modifying them directly
+4. Keep component variants in the same file as the component
+
+## Animation Best Practices
+
+1. Import motion components from Framer Motion:
+```tsx
+import { motion } from 'motion/react'
+```
+
+
+## Component Structure
+
+1. Use TypeScript for all components
+2. Follow this component structure:
+```tsx
+import { type FC } from 'react'
+import { cn } from '@/lib/utils'
+
+interface ComponentProps {
+  className?: string
+  // ... other props
+}
+
+export const Component: FC<ComponentProps> = ({
+  className,
+  ...props
+}) => {
+  return (
+    <div className={cn('base-classes', className)} {...props}>
+      {/* component content */}
+    </div>
+  )
+}
+```
+
+## Styling Guidelines
+
+1. Use Tailwind CSS for styling
+2. Use `cn()` utility for class merging
+3. Define reusable classes in components.json
+4. Use CSS variables for theming when needed

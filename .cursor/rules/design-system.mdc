@@ -1,0 +1,62 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Design System Guidelines
+
+## Color System
+Our design system uses the OKLCH color space for better color perception and consistency across different displays. Colors are defined using shadcn's theming system with light and dark mode support.
+
+### Base Colors
+- Background: Uses `--background` and `--foreground` for main content areas
+- Card: Uses `--card` and `--card-foreground` for elevated components
+- Popover: Uses `--popover` and `--popover-foreground` for floating elements
+
+### Semantic Colors
+- Primary: Main brand color (`--primary` and `--primary-foreground`)
+- Secondary: Supporting color (`--secondary` and `--secondary-foreground`)
+- Muted: Subtle backgrounds (`--muted` and `--muted-foreground`)
+- Accent: Emphasis elements (`--accent` and `--accent-foreground`)
+- Destructive: Error states (`--destructive`)
+
+### UI Elements
+- Border: `--border` for dividers and boundaries
+- Input: `--input` for form controls
+- Ring: `--ring` for focus states
+
+### Chart Colors
+We use a specific color palette for data visualization:
+- Chart-1: `--chart-1`
+- Chart-2: `--chart-2`
+- Chart-3: `--chart-3`
+- Chart-4: `--chart-4`
+- Chart-5: `--chart-5`
+
+### Sidebar Theme
+Dedicated colors for sidebar components:
+- Background: `--sidebar` and `--sidebar-foreground`
+- Primary: `--sidebar-primary` and `--sidebar-primary-foreground`
+- Accent: `--sidebar-accent` and `--sidebar-accent-foreground`
+- Border: `--sidebar-border`
+- Ring: `--sidebar-ring`
+
+## Border Radius
+We use a consistent border radius system:
+- Base: `--radius` (0.65rem)
+- Small: `--radius-sm` (calc(var(--radius) - 4px))
+- Medium: `--radius-md` (calc(var(--radius) - 2px))
+- Large: `--radius-lg` (var(--radius))
+- Extra Large: `--radius-xl` (calc(var(--radius) + 4px))
+
+## Layout
+- Header height is standardized at `--header-height` (50px)
+
+## Usage Guidelines
+1. Always use the semantic color variables instead of hard-coded values
+2. Respect dark mode by using the theme variables
+3. Use the `@layer base` utilities for consistent styling
+4. Container padding should follow the utility container rule (padding-inline: 1rem)
+
+## File References
+The main design system is implemented in [src/app/globals.css](mdc:src/app/globals.css)
