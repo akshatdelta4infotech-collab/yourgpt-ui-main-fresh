@@ -4,6 +4,8 @@ export default function BlocksPage() {
 =======
 import CtaSections from "../components/CtaSections";
 import Landingpageone from "../components/Landingpageone";
+import Landingpagetwo from "../components/Landingpagetwo";
+import Landingpagethree from "../components/Landingpagethree";
 
 export default function Page() {
   return (
@@ -37,6 +39,8 @@ export default function Page() {
           <CtaSections variant="cta" />
           <CtaSections variant="cta2" />
           <Landingpageone />
+          <Landingpagetwo />
+          <Landingpagethree />
 
           {/* Footer Divider */}
           <div className="mx-[8vw] mt-16 mb-16">

@@ -73,7 +73,7 @@ export default function HeroSection() {
     <div className="w-full">
       <PreviewCodeHeader activeTab={activeTab} setActiveTab={setActiveTab} />
 
-      <div className="w-full">
+      <div className="w-full min-h-[60vh]">
         {activeTab === "preview" ? (
           <div className="min-h-[60vh]">
             <div className="w-full min-h-[60vh] bg-gradient-to-b from-purple-50 to-blue-50">
@@ -302,8 +302,8 @@ export default function HeroSection() {
             </div>
           </div>
         ) : (
-          <div className="w-full flex items-start py-4">
-            <div className="w-full max-w-none px-6 text-left overflow-x-auto">
+          <div className="w-full h-full">
+            <div className="w-full h-full max-w-none text-left">
               <CodeView language="tsx" code={codeContent} />
             </div>
           </div>

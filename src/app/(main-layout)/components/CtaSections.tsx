@@ -214,9 +214,9 @@ export default function HostingHeroSection() {
       <PreviewCodeHeader activeTab={activeTab} setActiveTab={setActiveTab} />
 
       {/* Main content - full width to vertical borders */}
-      <div className="w-full">
+      <div className="w-full h-[60vh] overflow-hidden">
         {activeTab === "preview" ? (
-          <div className="min-h-[60vh]">
+          <div className="h-full overflow-y-auto">
             {variant === "default" ? (
               <div className="flex flex-col items-center justify-center min-h-[60vh] w-full text-center py-16">
                 <div className="w-full px-6">
@@ -301,7 +301,7 @@ export default function HostingHeroSection() {
               </section>
             ) : (
               // 🔹 CTA2 design version
-              <section className="w-full min-h-[60vh] relative mx-auto overflow-hidden py-16">
+              <section className="w-full h-full relative mx-auto overflow-hidden flex items-center justify-center">
                 {/* Background with gradient */}
                 <div className="absolute inset-0 bg-gradient-to-br from-indigo-900 via-purple-900 to-black"></div>
 
@@ -334,7 +334,7 @@ export default function HostingHeroSection() {
                 <div className="absolute top-1/2 right-10 w-2 h-24 bg-gradient-to-t from-purple-400/30 to-transparent transform -translate-y-1/2"></div>
 
                 {/* Main content */}
-                <div className="relative z-10 flex flex-col items-center justify-center min-h-[60vh] w-full text-center">
+                <div className="relative z-10 flex flex-col items-center justify-center h-full w-full text-center">
                   <div className="w-full px-6">
                     {/* Top badge */}
                     <div className="mb-12">
@@ -389,8 +389,8 @@ export default function HostingHeroSection() {
             )}
           </div>
         ) : (
-          <div className="w-full flex items-start py-4">
-            <div className="w-full max-w-none px-6 text-left overflow-x-auto">
+          <div className="w-full h-full">
+            <div className="w-full h-full max-w-none text-left">
               <CodeView
                 language="tsx"
                 code={
