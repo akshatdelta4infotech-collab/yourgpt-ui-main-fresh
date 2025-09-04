@@ -1,16 +1,32 @@
 "use client";
 
 import { Eye, Code2, Maximize } from "lucide-react";
+import { useState } from "react";
 
 interface PreviewCodeHeaderProps {
   activeTab: "preview" | "code";
   setActiveTab: (tab: "preview" | "code") => void;
+  previewComponent?: string; // Add this to identify which component to maximize
 }
 
 const PreviewCodeHeader = ({
   activeTab,
   setActiveTab,
+  previewComponent,
 }: PreviewCodeHeaderProps) => {
+  const [isMaximizing, setIsMaximizing] = useState(false);
+
+  const handleMaximize = () => {
+    if (previewComponent) {
+      setIsMaximizing(true);
+      // Open the specific preview component in a new tab
+      const url = `/preview/${previewComponent}`;
+      window.open(url, "_blank", "noopener,noreferrer");
+
+      // Reset the maximizing state after a short delay
+      setTimeout(() => setIsMaximizing(false), 1000);
+    }
+  };
   return (
     <header className="relative w-full">
       {/* Full-width horizontal dotted lines */}
@@ -69,8 +85,19 @@ const PreviewCodeHeader = ({
             <span className="w-px h-6 border-l border-dotted border-gray-300 dark:border-gray-700 mx-2"></span>
 
             {/* Zoom */}
-            <button className="ml-2 p-2 rounded-md hover:bg-muted hover:text-foreground transition-colors duration-200 cursor-pointer">
-              <Maximize className="w-4 h-4" />
+            <button
+              onClick={handleMaximize}
+              disabled={isMaximizing}
+              className={`ml-2 p-2 rounded-md transition-colors duration-200 cursor-pointer ${
+                isMaximizing
+                  ? "bg-blue-100 text-blue-600"
+                  : "hover:bg-muted hover:text-foreground"
+              }`}
+              title="Open in new tab"
+            >
+              <Maximize
+                className={`w-4 h-4 ${isMaximizing ? "animate-pulse" : ""}`}
+              />
             </button>
           </div>
         </div>

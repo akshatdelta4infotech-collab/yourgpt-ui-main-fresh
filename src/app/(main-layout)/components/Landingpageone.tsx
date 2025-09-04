@@ -25,17 +25,17 @@ import {
 
 export default function HeroSection() {
   return (
-    <div className=" bg-gradient-to-b from-purple-50 to-blue-50">
+    <div style={{ background: 'var(--lp-bg-gradient)' }}>
       {/* Navigation */}
       <nav className="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto">
         {/* Logo */}
         <div className="flex items-center space-x-2">
-          <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-sm">⚡</span>
+          <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ backgroundColor: 'var(--lp-btn-primary-bg)' }}>
+            <span style={{ color: 'var(--lp-btn-primary-text)' }} className="font-bold text-sm">⚡</span>
           </div>
           <div>
-            <div className="font-bold text-gray-900 text-lg">LIGHTNING</div>
-            <div className="font-bold text-gray-900 text-sm -mt-1">PROXIES</div>
+            <div className="font-bold text-lg" style={{ color: 'var(--lp-heading)' }}>LIGHTNING</div>
+            <div className="font-bold text-sm -mt-1" style={{ color: 'var(--lp-heading)' }}>PROXIES</div>
           </div>
         </div>
 
@@ -45,7 +45,8 @@ export default function HeroSection() {
             (item) => (
               <div
                 key={item}
-                className="flex items-center space-x-1 text-gray-700 cursor-pointer hover:text-gray-900"
+                className="flex items-center space-x-1 cursor-pointer hover:opacity-80"
+                style={{ color: 'var(--lp-trust-label)' }}
               >
                 <span>{item}</span>
                 <ChevronRight className="w-4 h-4 rotate-90" />
@@ -56,50 +57,87 @@ export default function HeroSection() {
 
         {/* Auth */}
         <div className="flex items-center space-x-4">
-          <button className="text-gray-700 hover:text-gray-900">Login</button>
-          <Button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg">
+          <button style={{ color: 'var(--lp-trust-label)' }} className="hover:opacity-80">Login</button>
+          <Button 
+            className="px-6 py-2 rounded-lg"
+            style={{ 
+              backgroundColor: 'var(--lp-btn-primary-bg)',
+              color: 'var(--lp-btn-primary-text)'
+            }}
+          >
             Get Started
             <ChevronRight className="w-4 h-4 ml-1" />
           </Button>
         </div>
       </nav>
 
-      {/* Rest of your component... */}
-    </div>
-  );
-}`;
+                            <img
+                              src={partner.img}
+                              alt="partner logo"
+                              className="w-32 h-32 object-contain -mx-4"
+                              style={{
+                                filter: 'var(--lp-logo-filter)',
+                              }}
+                            />`;
 
   return (
     <div className="w-full">
-      <PreviewCodeHeader activeTab={activeTab} setActiveTab={setActiveTab} />
+      <PreviewCodeHeader
+        activeTab={activeTab}
+        setActiveTab={setActiveTab}
+        previewComponent="landingpageone"
+      />
 
       <div className="w-full min-h-[60vh]">
         {activeTab === "preview" ? (
           <div className="min-h-[60vh]">
-            <div className="w-full min-h-[60vh] bg-gradient-to-b from-purple-50 to-blue-50">
+            <div
+              className="w-full min-h-[60vh]"
+              style={{ background: "var(--lp-bg-gradient)" }}
+            >
               {/* Divider line */}
-              <div className="h-px bg-gray-200 w-full"></div>
+              <div
+                className="h-px w-full"
+                style={{ backgroundColor: "var(--lp-divider)" }}
+              ></div>
 
               {/* Hero Content */}
-              <div className="w-full mx-auto px-6 py-8 bg-gradient-to-b from-blue-50 via-blue-100/40 to-blue-50">
+              <div
+                className="w-full mx-auto px-6 py-8"
+                style={{ background: "var(--lp-section-gradient)" }}
+              >
                 {/* Referral Banner */}
                 <div className="flex justify-center mb-16">
-                  <div className="bg-blue-100 text-blue-800 px-6 py-3 rounded-full text-sm">
+                  <div
+                    className="px-6 py-3 rounded-full text-sm"
+                    style={{
+                      backgroundColor: "var(--lp-banner-bg)",
+                      color: "var(--lp-banner-text)",
+                    }}
+                  >
                     Our online referral program is now available. Earn Rewards
                   </div>
                 </div>
 
                 {/* Main Heading */}
                 <div className="text-center mb-8">
-                  <h1 className="text-6xl md:text-7xl font-bold text-gray-900 leading-tight mb-1">
+                  <h1
+                    className="text-6xl md:text-7xl font-bold leading-tight mb-1"
+                    style={{ color: "var(--lp-heading)" }}
+                  >
                     Data Extraction
                   </h1>
                   <h1 className="text-6xl md:text-7xl font-bold leading-tight mb-5">
-                    <span className="text-blue-600">Excellence</span>{" "}
-                    <span className="text-gray-900">at Scale</span>
+                    <span style={{ color: "var(--lp-heading-accent)" }}>
+                      Excellence
+                    </span>{" "}
+                    <span style={{ color: "var(--lp-heading)" }}>at Scale</span>
                   </h1>
 
-                  <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                  <p
+                    className="text-xl max-w-2xl mx-auto leading-relaxed"
+                    style={{ color: "var(--lp-subheading)" }}
+                  >
                     Gather data efficiently with the industry-leading proxy
                     network and enjoy limitless web scraping solutions on the
                     most intense tasks.
@@ -109,26 +147,50 @@ export default function HeroSection() {
                 {/* Trust Indicators */}
                 <div className="flex justify-center items-center space-x-8 mb-12">
                   <div className="flex items-center space-x-2">
-                    <Star className="w-5 h-5 text-black fill-current" />
-                    <span className="text-gray-700 font-medium">
+                    <Star
+                      className="w-5 h-5 fill-current"
+                      style={{ color: "var(--lp-icon-primary)" }}
+                    />
+                    <span
+                      className="font-medium"
+                      style={{ color: "var(--lp-trust-label)" }}
+                    >
                       Trustpilot
                     </span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <Star className="w-5 h-5 text-black fill-current" />
-                    <span className="text-gray-700 font-medium">
+                    <Star
+                      className="w-5 h-5 fill-current"
+                      style={{ color: "var(--lp-icon-primary)" }}
+                    />
+                    <span
+                      className="font-medium"
+                      style={{ color: "var(--lp-trust-label)" }}
+                    >
                       4.5 rating
                     </span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <Shield className="w-5 h-5 text-gray-600" />
-                    <span className="text-gray-700 font-medium">
+                    <Shield
+                      className="w-5 h-5"
+                      style={{ color: "var(--lp-icon-secondary)" }}
+                    />
+                    <span
+                      className="font-medium"
+                      style={{ color: "var(--lp-trust-label)" }}
+                    >
                       10M+ Proxy Pool
                     </span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <Clock className="w-5 h-5 text-gray-600" />
-                    <span className="text-gray-700 font-medium">
+                    <Clock
+                      className="w-5 h-5"
+                      style={{ color: "var(--lp-icon-secondary)" }}
+                    />
+                    <span
+                      className="font-medium"
+                      style={{ color: "var(--lp-trust-label)" }}
+                    >
                       30 Day Free Trial
                     </span>
                   </div>
@@ -136,7 +198,21 @@ export default function HeroSection() {
 
                 {/* CTA */}
                 <div className="flex justify-center mb-16">
-                  <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl text-lg font-semibold">
+                  <Button
+                    className="px-8 py-4 rounded-xl text-lg font-semibold"
+                    style={{
+                      backgroundColor: "var(--lp-btn-primary-bg)",
+                      color: "var(--lp-btn-primary-text)",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor =
+                        "var(--lp-btn-primary-hover)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor =
+                        "var(--lp-btn-primary-bg)";
+                    }}
+                  >
                     Get Started
                     <ChevronRight className="w-5 h-5 ml-2" />
                   </Button>
@@ -146,14 +222,26 @@ export default function HeroSection() {
                 <div className="relative flex justify-center items-center space-x-4 mb-24 px-72">
                   {/* Left decorative line with dot */}
                   <div className="absolute left-0 top-1/2 transform -translate-y-1/2 flex items-center">
-                    <div className="w-80 h-0.5 bg-blue-500/20"></div>
-                    <div className="w-2 h-2 rounded-full bg-blue-500"></div>
+                    <div
+                      className="w-80 h-0.5"
+                      style={{ backgroundColor: "var(--lp-line)" }}
+                    ></div>
+                    <div
+                      className="w-2 h-2 rounded-full"
+                      style={{ backgroundColor: "var(--lp-dot)" }}
+                    ></div>
                   </div>
 
                   {/* Right decorative line with dot */}
                   <div className="absolute right-0 top-1/2 transform -translate-y-1/2 flex items-center">
-                    <div className="w-2 h-2 rounded-full bg-blue-500"></div>
-                    <div className="w-80 h-0.5 bg-blue-500/20"></div>
+                    <div
+                      className="w-2 h-2 rounded-full"
+                      style={{ backgroundColor: "var(--lp-dot)" }}
+                    ></div>
+                    <div
+                      className="w-80 h-0.5"
+                      style={{ backgroundColor: "var(--lp-line)" }}
+                    ></div>
                   </div>
 
                   {[
@@ -197,13 +285,22 @@ export default function HeroSection() {
 
                 {/* Partners */}
                 <div className="w-full overflow-hidden">
-                  <h3 className="text-gray-600 font-medium mb-8 tracking-wide text-center">
+                  <h3
+                    className="font-medium mb-8 tracking-wide text-center"
+                    style={{ color: "var(--lp-trust-label)" }}
+                  >
                     TRUSTED BY TOP PARTNERS IN THE INDUSTRY
                   </h3>
 
                   <div className="relative w-full">
-                    <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#f8fafc] to-transparent z-10"></div>
-                    <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#f8fafc] to-transparent z-10"></div>
+                    <div
+                      className="absolute left-0 top-0 bottom-0 w-20 z-10"
+                      style={{ background: "var(--lp-partner-fade-left)" }}
+                    ></div>
+                    <div
+                      className="absolute right-0 top-0 bottom-0 w-20 z-10"
+                      style={{ background: "var(--lp-partner-fade-right)" }}
+                    ></div>
 
                     <div className="overflow-x-auto scrollbar-hide">
                       <div className="flex items-center py-4 animate-scroll min-w-max">
@@ -260,8 +357,14 @@ export default function HeroSection() {
                               src={partner.img}
                               alt="partner logo"
                               className="w-32 h-32 object-contain -mx-4"
+                              style={{
+                                filter: "var(--lp-logo-filter)",
+                              }}
                             />
-                            <div className="h-8 w-px bg-gray-200 ml-8"></div>
+                            <div
+                              className="h-8 w-px ml-8"
+                              style={{ backgroundColor: "var(--lp-divider)" }}
+                            ></div>
                           </div>
                         ))}
                       </div>
@@ -292,7 +395,23 @@ export default function HeroSection() {
 
                 {/* Bottom Banner */}
                 <div className="flex justify-center mt-16">
-                  <div className="bg-white border border-gray-200 rounded-full px-6 py-3 text-gray-700 cursor-pointer hover:bg-gray-50 transition-colors">
+                  <div
+                    className="rounded-full px-6 py-3 cursor-pointer transition-colors"
+                    style={{
+                      backgroundColor: "var(--lp-bottom-banner-bg)",
+                      borderColor: "var(--lp-bottom-banner-border)",
+                      color: "var(--lp-bottom-banner-text)",
+                      border: "1px solid",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor =
+                        "var(--lp-bottom-banner-hover)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor =
+                        "var(--lp-bottom-banner-bg)";
+                    }}
+                  >
                     Learn how Lightning Proxies is transforming the proxy
                     landscape worldwide
                     <ChevronRight className="w-4 h-4 inline ml-2" />
