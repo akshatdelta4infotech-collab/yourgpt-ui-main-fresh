@@ -9,23 +9,8 @@ export default function Page() {
       {/* Dividing line below navbar */}
       <div className="w-full h-px bg-border fixed top-12 left-0 z-[80]"></div>
 
-      {/* Pattern bar - full viewport width, fixed at top */}
-      <div
-        className="fixed top-12 left-0 w-screen h-7 z-[70] border-b border- border-dotted border-border"
-        style={{
-          backgroundImage: `repeating-linear-gradient(
-            135deg, 
-            color-mix(in srgb, var(--foreground) 5%, transparent) 0px,
-            color-mix(in srgb, var(--foreground) 5%, transparent) 1px,
-            transparent 1px,
-            transparent 6px
-          )`,
-          backgroundColor: "var(--background)",
-        }}
-      ></div>
-
       {/* Content wrapper with proper spacing */}
-      <div className="relative pt-6 overflow-x-hidden">
+      <div className="relative pt-0 overflow-x-hidden">
         {/* Content with full width - components handle their own layout */}
         <div className="w-full overflow-x-hidden">
           {/* Render your section components - they handle their own padding */}

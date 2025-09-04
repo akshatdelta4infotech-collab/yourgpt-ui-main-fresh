@@ -27,7 +27,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import HeroVideoDialog from "@/components/magicui/hero-video-dialog";
 import PreviewCodeHeader from "./PreviewCodeHeader";
-import CodeView from "./CodeView";
+import CodeViewTwo from "./CodeViewTwo";
 
 export default function Landingpagethree() {
   const [activeTab, setActiveTab] = useState<"preview" | "code">("preview");
@@ -228,29 +228,109 @@ export default function DubHeroSection() {
   const allCompanies = [
     // Set 1 - 10 companies with SVG logos
     [
-      { name: "Twilio", logo: "https://assets.dub.co/companies/twilio.svg", color: "text-red-500" },
-      { name: "Superhuman", logo: "https://assets.dub.co/companies/superhuman.svg", color: "text-purple-500" },
-      { name: "Perplexity", logo: "https://assets.dub.co/companies/perplexity.svg", color: "text-blue-500" },
-      { name: "Vercel", logo: "https://assets.dub.co/companies/vercel.svg", color: "text-yellow-500" },
-      { name: "Raycast", logo: "https://assets.dub.co/companies/raycast.svg", color: "text-green-500" },
-      { name: "Framer", logo: "https://assets.dub.co/companies/framer.svg", color: "text-purple-500" },
-      { name: "Huberman Lab", logo: "https://assets.dub.co/companies/hubermanlab.svg", color: "text-blue-500" },
-      { name: "Tonies", logo: "https://assets.dub.co/companies/tonies.svg", color: "text-green-600" },
-      { name: "Buffer", logo: "https://assets.dub.co/companies/buffer.svg", color: "text-red-500" },
-      { name: "Product Hunt", logo: "https://assets.dub.co/companies/product-hunt.svg", color: "text-gray-600" },
+      { 
+        name: "Twilio", 
+        logo: "https://assets.dub.co/companies/twilio.svg", 
+        color: "text-red-500" 
+      },
+      { 
+        name: "Superhuman", 
+        logo: "https://assets.dub.co/companies/superhuman.svg", 
+        color: "text-purple-500" 
+      },
+      { 
+        name: "Perplexity", 
+        logo: "https://assets.dub.co/companies/perplexity.svg", 
+        color: "text-blue-500" 
+      },
+      { 
+        name: "Vercel", 
+        logo: "https://assets.dub.co/companies/vercel.svg", 
+        color: "text-yellow-500" 
+      },
+      { 
+        name: "Raycast", 
+        logo: "https://assets.dub.co/companies/raycast.svg", 
+        color: "text-green-500" 
+      },
+      { 
+        name: "Framer", 
+        logo: "https://assets.dub.co/companies/framer.svg", 
+        color: "text-purple-500" 
+      },
+      { 
+        name: "Huberman Lab", 
+        logo: "https://assets.dub.co/companies/hubermanlab.svg", 
+        color: "text-blue-500" 
+      },
+      { 
+        name: "Tonies", 
+        logo: "https://assets.dub.co/companies/tonies.svg", 
+        color: "text-green-600" 
+      },
+      { 
+        name: "Buffer", 
+        logo: "https://assets.dub.co/companies/buffer.svg", 
+        color: "text-red-500" 
+      },
+      { 
+        name: "Product Hunt", 
+        logo: "https://assets.dub.co/companies/product-hunt.svg", 
+        color: "text-gray-600" 
+      },
     ],
     // Set 2 - 10 companies with SVG logos
     [
-      { name: "Whop", logo: "https://assets.dub.co/companies/whop.svg", color: "text-red-500" },
-      { name: "Clerk", logo: "https://assets.dub.co/companies/clerk.svg", color: "text-purple-500" },
-      { name: "Cal.com", logo: "https://assets.dub.co/companies/cal.svg", color: "text-blue-500" },
-      { name: "Bolt", logo: "https://assets.dub.co/companies/bolt.svg", color: "text-yellow-500" },
-      { name: "Supabase", logo: "https://assets.dub.co/companies/supabase.svg", color: "text-green-500" },
-      { name: "Tella", logo: "https://assets.dub.co/companies/tella.svg", color: "text-purple-500" },
-      { name: "Polymarket", logo: "https://assets.dub.co/companies/polymarket.svg", color: "text-blue-500" },
-      { name: "Granola", logo: "https://assets.dub.co/companies/granola.svg", color: "text-green-600" },
-      { name: "Superlist", logo: "https://assets.dub.co/companies/superlist.svg", color: "text-red-500" },
-      { name: "Jobber", logo: "https://assets.dub.co/companies/jobber.svg", color: "text-gray-600" },
+      { 
+        name: "Whop", 
+        logo: "https://assets.dub.co/companies/whop.svg", 
+        color: "text-red-500" 
+      },
+      { 
+        name: "Clerk", 
+        logo: "https://assets.dub.co/companies/clerk.svg", 
+        color: "text-purple-500" 
+      },
+      { 
+        name: "Cal.com", 
+        logo: "https://assets.dub.co/companies/cal.svg", 
+        color: "text-blue-500" 
+      },
+      { 
+        name: "Bolt", 
+        logo: "https://assets.dub.co/companies/bolt.svg", 
+        color: "text-yellow-500" 
+      },
+      { 
+        name: "Supabase", 
+        logo: "https://assets.dub.co/companies/supabase.svg", 
+        color: "text-green-500" 
+      },
+      { 
+        name: "Tella", 
+        logo: "https://assets.dub.co/companies/tella.svg", 
+        color: "text-purple-500" 
+      },
+      { 
+        name: "Polymarket", 
+        logo: "https://assets.dub.co/companies/polymarket.svg", 
+        color: "text-blue-500" 
+      },
+      { 
+        name: "Granola", 
+        logo: "https://assets.dub.co/companies/granola.svg", 
+        color: "text-green-600" 
+      },
+      { 
+        name: "Superlist", 
+        logo: "https://assets.dub.co/companies/superlist.svg", 
+        color: "text-red-500" 
+      },
+      { 
+        name: "Jobber", 
+        logo: "https://assets.dub.co/companies/jobber.svg", 
+        color: "text-gray-600" 
+      },
     ]
   ];
 
@@ -264,21 +344,37 @@ export default function DubHeroSection() {
   const currentCompanies = allCompanies[currentCompanySet];
 
   const linkData = [
-    { shortLink: 'go.acme.com/launch', destination: 'acme.com/announcements/new-feature-launch', date: 'Jul 4, 2025', views: 0, clicks: 0, conversions: 0 },
-    { shortLink: 'go.acme.com/announcement', destination: 'acme.com/blog/announcement-blog-post', date: 'Jun 29, 2025', views: '1.5K', clicks: 487, conversions: 280 },
+    { 
+      shortLink: 'go.acme.com/launch', 
+      destination: 'acme.com/announcements/new-feature-launch', 
+      date: 'Jul 4, 2025', 
+      views: 0, 
+      clicks: 0, 
+      conversions: 0 
+    },
+    { 
+      shortLink: 'go.acme.com/announcement', 
+      destination: 'acme.com/blog/announcement-blog-post', 
+      date: 'Jun 29, 2025', 
+      views: '1.5K', 
+      clicks: 487, 
+      conversions: 280 
+    },
     // ... more data
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 font-inter relative">
+    <div className="min-h-screen font-inter relative" style={{ 
+      background: 'linear-gradient(to bottom, var(--lp-bg-base), var(--lp-bg-subtle))' 
+    }}>
       {/* Grid Pattern Background - Covers entire component */}
       <div className="absolute inset-0 opacity-40">
         <div 
           className="w-full h-full"
           style={{
             backgroundImage: \`
-              linear-gradient(rgba(156, 163, 175, 0.3) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(156, 163, 175, 0.3) 1px, transparent 1px)
+              linear-gradient(var(--lp-grid-line) 1px, transparent 1px),
+              linear-gradient(90deg, var(--lp-grid-line) 1px, transparent 1px)
             \`,
             backgroundSize: '24px 24px'
           }}
@@ -289,10 +385,7 @@ export default function DubHeroSection() {
       <div 
         className="absolute inset-0"
         style={{
-          background: \`
-            radial-gradient(ellipse 900px 500px at center 25%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.9) 25%, rgba(255, 255, 255, 0.7) 45%, rgba(255, 255, 255, 0.2) 70%, transparent 100%),
-            linear-gradient(to bottom, transparent 0%, transparent 75%, rgba(255, 255, 255, 0.6) 90%, rgba(255, 255, 255, 0.9) 100%)
-          \`
+          background: 'var(--lp-gradient-overlay)'
         }}
       ></div>
       
@@ -301,27 +394,41 @@ export default function DubHeroSection() {
         {/* Content with higher z-index */}
         <div className="relative z-10">
         {/* Announcement Banner */}
-        <div className="inline-flex items-center px-4 py-2 rounded-full border border-gray-200 bg-white shadow-sm hover:shadow-md cursor-pointer mb-8">
-          <span className="text-sm font-medium text-gray-700">Introducing Dub Partners</span>
-          <span className="ml-2 text-sm text-gray-500">Read more</span>
-          <ArrowRight className="w-3 h-3 ml-1 text-gray-400" />
+        <div className="inline-flex items-center px-4 py-2 rounded-full shadow-sm hover:shadow-md cursor-pointer mb-8" style={{
+          border: '1px solid var(--lp-grid-line)',
+          backgroundColor: 'var(--lp-bg-card)'
+        }}>
+          <span className="text-sm font-medium" style={{ color: 'var(--lp-text-secondary)' }}>Introducing Dub Partners</span>
+          <span className="ml-2 text-sm" style={{ color: 'var(--lp-text-muted)' }}>Read more</span>
+          <ArrowRight className="w-3 h-3 ml-1" style={{ color: 'var(--lp-text-muted)' }} />
         </div>
 
         {/* Main Heading */}
         <div className="relative mb-6">
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl text-gray-900 leading-tight">Turn clicks into revenue</h1>
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl leading-tight" style={{ color: 'var(--lp-text-primary)' }}>Turn clicks into revenue</h1>
         </div>
         
         <div className="relative mb-10">
-          <p className="text-xl sm:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl sm:text-2xl max-w-3xl mx-auto leading-relaxed" style={{ color: 'var(--lp-text-secondary)' }}>
             Dub is the modern link attribution platform for short links, conversion tracking, and affiliate programs.
           </p>
         </div>
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-          <Button className="bg-black text-white px-8 py-4 text-lg shadow-lg hover:bg-gray-800">Start for free</Button>
-          <Button variant="outline" className="px-8 py-4 text-lg">Get a demo</Button>
+          <Button className="px-8 py-4 text-lg shadow-lg" style={{
+            backgroundColor: 'var(--lp-accent)',
+            color: 'var(--lp-accent-contrast)'
+          }}>
+            Start for free
+          </Button>
+          <Button className="px-8 py-4 text-lg" style={{
+            backgroundColor: 'var(--lp-bg-card)',
+            border: '1px solid var(--lp-grid-line)',
+            color: 'var(--lp-text-muted)'
+          }}>
+            Get a demo
+          </Button>
         </div>
         </div>
       </div>
@@ -329,20 +436,35 @@ export default function DubHeroSection() {
       {/* Feature Buttons */}
       <div className="flex justify-center gap-2 mb-16">
         <div className="flex items-center gap-3">
-          <Button variant="outline" className="text-sm font-medium text-gray-700 hover:text-gray-900 border-gray-600 hover:border-gray-800">
+          <Button className="text-sm font-medium shadow-sm" style={{
+            color: 'var(--lp-text-primary)',
+            backgroundColor: 'var(--lp-bg-card)',
+            border: '1px solid var(--lp-grid-line)'
+          }}>
             Short Links
           </Button>
-          <Button variant="outline" className="text-sm font-medium text-gray-700 hover:text-gray-900 border-gray-600 hover:border-gray-800">
+          <Button className="text-sm font-medium shadow-sm" style={{
+            color: 'var(--lp-text-primary)',
+            backgroundColor: 'var(--lp-bg-card)',
+            border: '1px solid var(--lp-grid-line)'
+          }}>
             Conversion Analytics
           </Button>
-          <Button variant="outline" className="text-sm font-medium text-gray-700 hover:text-gray-900 border-gray-600 hover:border-gray-800">
+          <Button className="text-sm font-medium shadow-sm" style={{
+            color: 'var(--lp-text-primary)',
+            backgroundColor: 'var(--lp-bg-card)',
+            border: '1px solid var(--lp-grid-line)'
+          }}>
             Affiliate Programs
           </Button>
         </div>
       </div>
 
       {/* Video Demo Section */}
-      <div className="grid-section relative overflow-visible px-4 border-grid-border border-y bg-neutral-100">
+      <div className="grid-section relative overflow-visible px-4 border-y" style={{
+        borderColor: 'var(--lp-grid-line)',
+        backgroundColor: 'var(--lp-bg-subtle)'
+      }}>
         <div className="max-w-6xl mx-auto py-20 relative">
           <HeroVideoDialog
             className="block"
@@ -355,28 +477,36 @@ export default function DubHeroSection() {
           <div 
             className="absolute inset-0 pointer-events-none z-10"
             style={{
-              background: \`linear-gradient(to bottom, transparent 0%, transparent 50%, rgba(245, 245, 244, 0.5) 70%, rgba(245, 245, 244, 0.8) 85%, rgba(245, 245, 244, 0.95) 100%)\`
+              background: 'var(--lp-video-overlay)'
             }}
           ></div>
           
           {/* Black Overlapping Div - Positioned to overlap video */}
-          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 w-1/2 h-16 bg-black rounded-lg shadow-lg z-50 flex items-center justify-center">
+          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 
+            translate-y-1/2 w-1/2 h-16 rounded-lg shadow-lg z-50 
+            flex items-center justify-center" style={{
+              backgroundColor: 'var(--lp-accent)'
+            }}>
             <div className="flex items-center gap-3">
-              <Link2 className="w-5 h-5 text-white" />
-              <span className="text-white font-medium">Short Links</span>
-              <ArrowRight className="w-4 h-4 text-white" />
+              <Link2 className="w-5 h-5" style={{ color: 'var(--lp-accent-contrast)' }} />
+              <span className="font-medium" style={{ color: 'var(--lp-accent-contrast)' }}>Short Links</span>
+              <ArrowRight className="w-4 h-4" style={{ color: 'var(--lp-accent-contrast)' }} />
             </div>
           </div>
         </div>
       </div>
 
       {/* Animated Company Logos */}
-      <div className="py-20 bg-white">
+      <div className="py-20" style={{ backgroundColor: 'var(--lp-bg-card)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="grid grid-cols-5 grid-rows-2 gap-x-8 gap-y-6 items-center justify-items-center max-w-5xl mx-auto">
+          <div className="grid grid-cols-5 grid-rows-2 gap-x-8 gap-y-6 
+            items-center justify-items-center max-w-5xl mx-auto">
             {currentCompanies.map((company, idx) => (
               <div key={\`\${currentCompanySet}-\${idx}\`} className="group cursor-pointer w-full">
-                <div className="flex flex-col items-center p-6 rounded-xl hover:bg-gray-50 transition-all duration-200">
+                <div className="flex flex-col items-center p-6 rounded-xl 
+                  transition-all duration-200" style={{
+                    backgroundColor: 'transparent'
+                  }}>
                   <div
                     className={\`group-hover:scale-110 transition-transform duration-200\`}
                     style={{ animation: "fadeInSlide 0.8s ease-in-out" }}
@@ -386,6 +516,9 @@ export default function DubHeroSection() {
                         src={company.logo} 
                         alt={company.name}
                         className="w-20 h-20 object-contain"
+                        style={{
+                          filter: 'var(--lp-logo-filter)',
+                        }}
                       />
                     ) : (
                       <span className={\`text-4xl \${company.color}\`}>
@@ -405,20 +538,30 @@ export default function DubHeroSection() {
 
   return (
     <div className="w-full font-inter">
-      <PreviewCodeHeader activeTab={activeTab} setActiveTab={setActiveTab} />
+      <PreviewCodeHeader
+        activeTab={activeTab}
+        setActiveTab={setActiveTab}
+        previewComponent="landingpagethree"
+      />
 
       <div className="w-full min-h-[60vh]">
         {activeTab === "preview" ? (
           <div className="min-h-[60vh] font-inter">
-            <div className="w-full min-h-[60vh] bg-gradient-to-b from-white to-gray-50 relative">
+            <div
+              className="w-full min-h-[60vh] relative"
+              style={{
+                background:
+                  "linear-gradient(to bottom, var(--lp-bg-base), var(--lp-bg-subtle))",
+              }}
+            >
               {/* Grid Pattern Background - Covers entire section */}
               <div className="absolute inset-0 opacity-40">
                 <div
                   className="w-full h-full"
                   style={{
                     backgroundImage: `
-                      linear-gradient(rgba(156, 163, 175, 0.3) 1px, transparent 1px),
-                      linear-gradient(90deg, rgba(156, 163, 175, 0.3) 1px, transparent 1px)
+                      linear-gradient(var(--lp-grid-line) 1px, transparent 1px),
+                      linear-gradient(90deg, var(--lp-grid-line) 1px, transparent 1px)
                     `,
                     backgroundSize: "60px 60px",
                   }}
@@ -429,10 +572,7 @@ export default function DubHeroSection() {
               <div
                 className="absolute inset-0"
                 style={{
-                  background: `
-                    radial-gradient(ellipse 900px 500px at center 25%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.9) 25%, rgba(255, 255, 255, 0.7) 45%, rgba(255, 255, 255, 0.2) 70%, transparent 100%),
-                    linear-gradient(to bottom, transparent 0%, transparent 75%, rgba(255, 255, 255, 0.6) 90%, rgba(255, 255, 255, 0.9) 100%)
-                  `,
+                  background: "var(--lp-gradient-overlay)",
                 }}
               ></div>
 
@@ -441,25 +581,46 @@ export default function DubHeroSection() {
                 {/* Content with higher z-index */}
                 <div className="relative z-10">
                   {/* Announcement Banner */}
-                  <div className="inline-flex items-center px-4 py-2 rounded-full border border-gray-200 bg-white shadow-sm hover:shadow-md cursor-pointer mb-8">
-                    <span className="text-sm font-medium text-gray-700">
+                  <div
+                    className="inline-flex items-center px-4 py-2 rounded-full shadow-sm hover:shadow-md cursor-pointer mb-8"
+                    style={{
+                      border: "1px solid var(--lp-grid-line)",
+                      backgroundColor: "var(--lp-bg-card)",
+                    }}
+                  >
+                    <span
+                      className="text-sm font-medium"
+                      style={{ color: "var(--lp-text-secondary)" }}
+                    >
                       Introducing Dub Partners
                     </span>
-                    <span className="ml-2 text-sm text-gray-500">
+                    <span
+                      className="ml-2 text-sm"
+                      style={{ color: "var(--lp-text-muted)" }}
+                    >
                       Read more
                     </span>
-                    <ArrowRight className="w-3 h-3 ml-1 text-gray-400" />
+                    <ArrowRight
+                      className="w-3 h-3 ml-1"
+                      style={{ color: "var(--lp-text-muted)" }}
+                    />
                   </div>
 
                   {/* Main Heading */}
                   <div className="relative mb-6">
-                    <h1 className="text-5xl sm:text-6xl lg:text-7xl text-gray-900 leading-tight">
+                    <h1
+                      className="text-5xl sm:text-6xl lg:text-7xl leading-tight"
+                      style={{ color: "var(--lp-text-primary)" }}
+                    >
                       Turn clicks into revenue
                     </h1>
                   </div>
 
                   <div className="relative mb-10">
-                    <p className="text-xl sm:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    <p
+                      className="text-xl sm:text-2xl max-w-3xl mx-auto leading-relaxed"
+                      style={{ color: "var(--lp-text-secondary)" }}
+                    >
                       Dub is the modern link attribution platform for short
                       links, conversion tracking, and affiliate programs.
                     </p>
@@ -467,10 +628,23 @@ export default function DubHeroSection() {
 
                   {/* CTA Buttons */}
                   <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-                    <Button className="bg-black text-white px-8 py-4 text-lg shadow-lg hover:bg-gray-800">
+                    <Button
+                      className="px-8 py-4 text-lg shadow-lg"
+                      style={{
+                        backgroundColor: "var(--lp-accent)",
+                        color: "var(--lp-accent-contrast)",
+                      }}
+                    >
                       Start for free
                     </Button>
-                    <Button className="bg-white border border-gray-300 text-gray-400 px-8 py-4 text-lg hover:bg-gray-100">
+                    <Button
+                      className="px-8 py-4 text-lg"
+                      style={{
+                        backgroundColor: "var(--lp-bg-card)",
+                        border: "1px solid var(--lp-grid-line)",
+                        color: "var(--lp-text-muted)",
+                      }}
+                    >
                       Get a demo
                     </Button>
                   </div>
@@ -480,21 +654,47 @@ export default function DubHeroSection() {
               {/* Feature Buttons */}
               <div className="flex justify-center gap-2 mb-16 relative z-20">
                 <div className="flex items-center gap-3">
-                  <Button className="text-sm font-medium text-black bg-white border border-neutral-400 hover:bg-neutral-50 shadow-sm">
+                  <Button
+                    className="text-sm font-medium shadow-sm"
+                    style={{
+                      color: "var(--lp-text-primary)",
+                      backgroundColor: "var(--lp-bg-card)",
+                      border: "1px solid var(--lp-grid-line)",
+                    }}
+                  >
                     Short Links
                   </Button>
 
-                  <Button className="text-sm font-medium text-black bg-white border border-neutral-400 hover:bg-neutral-50 shadow-sm">
+                  <Button
+                    className="text-sm font-medium shadow-sm"
+                    style={{
+                      color: "var(--lp-text-primary)",
+                      backgroundColor: "var(--lp-bg-card)",
+                      border: "1px solid var(--lp-grid-line)",
+                    }}
+                  >
                     Conversion Analytics
                   </Button>
-                  <Button className="text-sm font-medium text-black bg-white border border-neutral-400 hover:bg-neutral-50 shadow-sm">
+                  <Button
+                    className="text-sm font-medium shadow-sm"
+                    style={{
+                      color: "var(--lp-text-primary)",
+                      backgroundColor: "var(--lp-bg-card)",
+                      border: "1px solid var(--lp-grid-line)",
+                    }}
+                  >
                     Affiliate Programs
                   </Button>
                 </div>
               </div>
 
               {/* Video Demo Section */}
-              <div className="grid-section relative overflow-visible px-4 border-grid-border border-y bg-neutral-100">
+              <div
+                className="grid-section relative overflow-visible px-4"
+                style={{
+                  backgroundColor: "var(--lp-bg-subtle)",
+                }}
+              >
                 <div className="max-w-4xl mx-auto py-20 relative">
                   <HeroVideoDialog
                     className="block"
@@ -503,22 +703,37 @@ export default function DubHeroSection() {
                     thumbnailSrc="https://startup-template-sage.vercel.app/hero-light.png"
                     thumbnailAlt="Dub Platform Demo Video"
                   />
+
                   {/* Video Bottom Gradient Overlay */}
                   <div
                     className="absolute inset-0 pointer-events-none z-10"
                     style={{
-                      background: `linear-gradient(to bottom, transparent 0%, transparent 50%, rgba(245, 245, 244, 0.5) 70%, rgba(245, 245, 244, 0.8) 85%, rgba(245, 245, 244, 0.95) 100%)`,
+                      background: "var(--lp-video-overlay)",
                     }}
                   ></div>
 
-                  {/* Black Overlapping Div - Positioned to overlap video */}
-                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 w-80 h-16 bg-black rounded-lg shadow-lg z-50 flex items-center justify-center">
+                  {/* Black Overlapping Div */}
+                  <div
+                    className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 w-80 h-16 rounded-lg shadow-lg z-50 flex items-center justify-center"
+                    style={{
+                      backgroundColor: "var(--lp-accent)",
+                    }}
+                  >
                     <div className="flex items-center gap-3">
-                      <Link2 className="w-5 h-5 text-white" />
-                      <span className="text-white font-medium">
+                      <Link2
+                        className="w-5 h-5"
+                        style={{ color: "var(--lp-accent-contrast)" }}
+                      />
+                      <span
+                        className="font-medium"
+                        style={{ color: "var(--lp-accent-contrast)" }}
+                      >
                         Short Links
                       </span>
-                      <ArrowRight className="w-4 h-4 text-white" />
+                      <ArrowRight
+                        className="w-4 h-4"
+                        style={{ color: "var(--lp-accent-contrast)" }}
+                      />
                     </div>
                   </div>
                 </div>
@@ -526,7 +741,10 @@ export default function DubHeroSection() {
             </div>
 
             {/* Company Logos - Outside grid pattern container */}
-            <div className="py-20 bg-white">
+            <div
+              className="py-20"
+              style={{ backgroundColor: "var(--lp-bg-card)" }}
+            >
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <div className="grid grid-cols-5 grid-rows-2 gap-x-8 gap-y-6 items-center justify-items-center max-w-5xl mx-auto">
                   {currentCompanies.map((company, idx) => (
@@ -534,7 +752,12 @@ export default function DubHeroSection() {
                       key={`${currentCompanySet}-${idx}`}
                       className="group cursor-pointer w-full"
                     >
-                      <div className="flex flex-col items-center p-6 rounded-xl hover:bg-gray-50 transition-all duration-200">
+                      <div
+                        className="flex flex-col items-center p-6 rounded-xl transition-all duration-200 hover:bg-opacity-50"
+                        style={{
+                          backgroundColor: "transparent",
+                        }}
+                      >
                         <div
                           className={`group-hover:scale-110 transition-transform duration-200`}
                           style={{
@@ -546,6 +769,9 @@ export default function DubHeroSection() {
                               src={company.logo}
                               alt={company.name}
                               className="w-20 h-20 object-contain"
+                              style={{
+                                filter: "var(--lp-logo-filter)",
+                              }}
                             />
                           ) : (
                             <span className={`text-4xl ${company.color}`}>
@@ -576,7 +802,7 @@ export default function DubHeroSection() {
         ) : (
           <div className="w-full h-full">
             <div className="w-full h-full max-w-none text-left">
-              <CodeView language="tsx" code={codeContent} />
+              <CodeViewTwo language="tsx" code={codeContent} />
             </div>
           </div>
         )}
