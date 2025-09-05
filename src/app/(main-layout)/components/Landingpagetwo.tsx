@@ -56,9 +56,7 @@ export default function Landingpagetwo() {
 import { useState, useEffect } from "react";
 import { Play, Globe, Presentation, ArrowUpRight } from "lucide-react";
 import { useTheme } from "next-themes";
-
 import { Button } from "@/components/ui/button";
-
 export default function Landingpagetwo() {
   const [currentAIIndex, setCurrentAIIndex] = useState(0);
   const { theme } = useTheme();

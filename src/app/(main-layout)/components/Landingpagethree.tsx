@@ -1,5 +1,4 @@
 "use client";
-
 import { useState, useEffect } from "react";
 import {
   Search,
@@ -20,7 +19,6 @@ import {
   ChevronDown,
   ArrowRight,
 } from "lucide-react";
-
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
@@ -28,11 +26,9 @@ import { Input } from "@/components/ui/input";
 import HeroVideoDialog from "@/components/magicui/hero-video-dialog";
 import PreviewCodeHeader from "./PreviewCodeHeader";
 import CodeViewTwo from "./CodeViewTwo";
-
 export default function Landingpagethree() {
   const [activeTab, setActiveTab] = useState<"preview" | "code">("preview");
   const [currentCompanySet, setCurrentCompanySet] = useState(0);
-
   // All companies divided into sets of 10 (2 rows x 5 columns)
   const allCompanies = [
     // Set 1 - 10 companies with SVG logos
@@ -205,19 +201,15 @@ export default function Landingpagethree() {
   ];
 
   const codeContent = `"use client";
-
 import { useState, useEffect } from "react";
 import {
   ArrowRight,
   Link2,
 } from "lucide-react";
-
 import { Button } from "@/components/ui/button";
 import HeroVideoDialog from "@/components/magicui/hero-video-dialog";
-
 export default function Landingpagethree() {
   const [currentCompanySet, setCurrentCompanySet] = useState(0);
-
   // All companies divided into sets of 10 (2 rows x 5 columns)
   const allCompanies = [
     // Set 1 - 10 companies with SVG logos

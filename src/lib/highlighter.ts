@@ -25,35 +25,31 @@ export async function highlight(code: string, lang: string = "tsx") {
 
     await highlighter.loadLanguage(lang as any).catch(() => { });
 
-    const { tokens } = await highlighter.codeToTokens(code, {
+    // Preprocess code to remove empty lines
+    const cleanedCode = code
+        .split('\n')
+        .filter(line => line.trim() !== '') // Remove completely empty lines
+        .join('\n')
+        .trim(); // Remove leading/trailing whitespace
+
+    const { tokens } = await highlighter.codeToTokens(cleanedCode, {
         lang: lang as any,
         theme: THEME,
     });
 
-    // Trim leading/trailing blank lines
-    let start = 0;
-    let end = tokens.length - 1;
-    while (start < tokens.length && tokens[start].every(t => t.content.trim() === "")) start++;
-    while (end >= 0 && tokens[end].every(t => t.content.trim() === "")) end--;
-
-    const trimmedTokens = tokens.slice(start, end + 1);
-
     let lineNumber = 1;
-    const body = trimmedTokens
-        .map(line => {
-            const isEmpty = line.every(t => t.content.trim() === "");
-
+    const body = tokens
+        .map((line: any) => {
             const inner = line
                 .map(
-                    t =>
+                    (t: any) =>
                         `<span style="color:${t.color ?? "inherit"}">${escapeHtml(
                             t.content
                         )}</span>`
                 )
                 .join("");
 
-            const lineContent = isEmpty ? "&nbsp;" : inner;
-            return `<div class="line"><span class="line-number">${lineNumber++}</span><span class="line-content">${lineContent}</span></div>`;
+            return `<div class="line"><span class="line-number">${lineNumber++}</span><span class="line-content">${inner}</span></div>`;
         })
         .join("");
 

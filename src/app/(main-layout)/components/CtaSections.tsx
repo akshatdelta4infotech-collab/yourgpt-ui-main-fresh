@@ -26,9 +26,7 @@ const StartBuildingUI = ({
 }: StartBuildingUIProps) => {
   const [activeTab, setActiveTab] = useState<"preview" | "code">("preview");
 
-  const codeDefault = `
-import { Button } from "@/components/ui/button";
-
+  const codeDefault = `import { Button } from "@/components/ui/button";
 export default function CallToAction() {
   return (
     <div className="flex flex-col items-center justify-center min-h-[60vh] w-full text-center py-16">
@@ -39,7 +37,6 @@ export default function CallToAction() {
         <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto">
           Libero sapiente aliquam quibusdam aspernatur.
         </p>
-
         <div className="flex items-center justify-center space-x-4">
           <Button className="bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-2 text-base font-medium h-10 rounded-md">
             Get Started
@@ -57,10 +54,8 @@ export default function CallToAction() {
 }
 `;
 
-  const codeEmail = `
-import { Button } from "@/components/ui/button";
+  const codeEmail = `import { Button } from "@/components/ui/button";
 import { Mail } from "lucide-react";
-
 export default function CallToActionEmail() {
   return (
     <div className="flex flex-col items-center justify-center min-h-[60vh] w-full text-center py-16">
@@ -71,7 +66,6 @@ export default function CallToActionEmail() {
         <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto">
           Libero sapiente aliquam quibusdam aspernatur.
         </p>
-
         <div className="relative w-full max-w-lg mx-auto">
           <span className="absolute inset-y-0 left-4 flex items-center text-muted-foreground pointer-events-none">
             <Mail className="w-5 h-5" />
@@ -79,7 +73,11 @@ export default function CallToActionEmail() {
           <input
             type="email"
             placeholder="Your email address"
-            className="w-full h-14 bg-background border border-border rounded-2xl pl-10 pr-28 text-sm text-foreground placeholder-muted-foreground focus:outline-none"
+            className={
+              "w-full h-14 bg-background border border-border " +
+              "rounded-2xl pl-10 pr-28 text-sm text-foreground " +
+              "placeholder-muted-foreground focus:outline-none"
+            }
           />
           <Button className="absolute top-1/2 -translate-y-1/2 right-4 h-9 px-4 rounded-md bg-primary text-primary-foreground hover:bg-primary/90 text-sm">
             Get Started
@@ -90,10 +88,8 @@ export default function CallToActionEmail() {
   )
 }
 `;
-  const codeCTA = `
-import { Button } from "@/components/ui/button";
+  const codeCTA = `import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
-
 export default function CtaDesign() {
   return (
     <section
@@ -144,11 +140,9 @@ export default function CtaDesign() {
 }
 `;
 
-  const codeCTA2 = `
-import React from 'react';
+  const codeCTA2 = `import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
-
 export default function HostingHeroSection() {
   return (
     <section className="w-full h-full relative mx-auto overflow-hidden flex items-center justify-center">
@@ -157,7 +151,6 @@ export default function HostingHeroSection() {
         className="absolute inset-0"
         style={{ background: "var(--cta2-bg-gradient)" }}
       ></div>
-
       {/* Grid pattern overlay */}
       <div className="absolute inset-0 opacity-20">
         <div
@@ -328,7 +321,11 @@ export default function HostingHeroSection() {
                     <input
                       type="email"
                       placeholder="Your email address"
-                      className="w-full h-14 bg-background border border-border rounded-2xl pl-10 pr-28 text-sm text-foreground placeholder-muted-foreground focus:outline-none"
+                      className={
+                        "w-full h-14 bg-background border border-border " +
+                        "rounded-2xl pl-10 pr-28 text-sm text-foreground " +
+                        "placeholder-muted-foreground focus:outline-none"
+                      }
                     />
                     <Button className="absolute top-1/2 -translate-y-1/2 right-4 h-9 px-4 rounded-md bg-primary text-primary-foreground hover:bg-primary/90 text-sm">
                       Get Started

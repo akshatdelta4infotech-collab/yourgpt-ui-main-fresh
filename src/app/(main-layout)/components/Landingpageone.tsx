@@ -9,10 +9,8 @@ import CodeView from "./CodeView";
 export default function Landingpageone() {
   const [activeTab, setActiveTab] = useState<"preview" | "code">("preview");
 
-  const codeContent = `
-import { Button } from "@/components/ui/button";
+  const codeContent = `import { Button } from "@/components/ui/button";
 import { Star, Shield, Clock, ChevronRight } from "lucide-react";
-
 export default function HeroSection() {
   return (
     <div
@@ -24,7 +22,6 @@ export default function HeroSection() {
         className="h-px w-full"
         style={{ backgroundColor: "var(--lp-divider)" }}
       ></div>
-
       {/* Hero Content */}
       <div
         className="w-full mx-auto px-4 sm:px-6 py-6 sm:py-8"
