@@ -14,7 +14,7 @@ export default function Page() {
         {/* Content with full width - components handle their own layout */}
         <div className="w-full overflow-x-hidden">
           {/* Render your section components - they handle their own padding */}
-          <CtaSections />
+          <CtaSections isFirstInstance={true} />
           <CtaSections variant="email" />
           <CtaSections />
           <CtaSections variant="cta" />

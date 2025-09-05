@@ -7,12 +7,14 @@ interface PreviewCodeHeaderProps {
   activeTab: "preview" | "code";
   setActiveTab: (tab: "preview" | "code") => void;
   previewComponent?: string; // Add this to identify which component to maximize
+  hideTopBorder?: boolean; // Add this to conditionally hide top border
 }
 
 const PreviewCodeHeader = ({
   activeTab,
   setActiveTab,
   previewComponent,
+  hideTopBorder = false,
 }: PreviewCodeHeaderProps) => {
   const [isMaximizing, setIsMaximizing] = useState(false);
 
@@ -31,18 +33,20 @@ const PreviewCodeHeader = ({
     <header className="relative w-full">
       {/* Full-width horizontal dotted lines */}
       <div className="absolute inset-0">
-        {/* Top dotted line */}
-        <div
-          className="absolute top-0 h-px border-t border-dotted border-gray-300 dark:border-gray-700"
-          style={{
-            left: "50%",
-            transform: "translateX(-50%)",
-            width: "100vw",
-          }}
-        ></div>
+        {/* Top dotted line - conditionally rendered */}
+        {!hideTopBorder && (
+          <div
+            className="absolute top-0 h-px border-t border-dotted border-border"
+            style={{
+              left: "50%",
+              transform: "translateX(-50%)",
+              width: "100vw",
+            }}
+          ></div>
+        )}
         {/* Bottom dotted line */}
         <div
-          className="absolute bottom-0 h-px border-b border-dotted border-gray-300 dark:border-gray-700"
+          className="absolute bottom-0 h-px border-b border-dotted border-border"
           style={{
             left: "50%",
             transform: "translateX(-50%)",
@@ -82,7 +86,7 @@ const PreviewCodeHeader = ({
             </button>
 
             {/* Divider */}
-            <span className="w-px h-6 border-l border-dotted border-gray-300 dark:border-gray-700 mx-2"></span>
+            <span className="w-px h-6 border-l border-dotted border-border mx-2"></span>
 
             {/* Zoom */}
             <button
@@ -90,7 +94,7 @@ const PreviewCodeHeader = ({
               disabled={isMaximizing}
               className={`ml-2 p-2 rounded-md transition-colors duration-200 cursor-pointer ${
                 isMaximizing
-                  ? "bg-blue-100 text-blue-600"
+                  ? "bg-primary/20 text-primary"
                   : "hover:bg-muted hover:text-foreground"
               }`}
               title="Open in new tab"

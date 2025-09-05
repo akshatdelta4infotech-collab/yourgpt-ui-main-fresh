@@ -16,11 +16,13 @@ import PreviewCodeHeader from "./PreviewCodeHeader";
 type StartBuildingUIProps = {
   variant?: "default" | "email" | "cta" | "cta2";
   code?: string;
+  isFirstInstance?: boolean; // Add this to identify the first CTA instance
 };
 
 const StartBuildingUI = ({
   variant = "default",
   code = "",
+  isFirstInstance = false,
 }: StartBuildingUIProps) => {
   const [activeTab, setActiveTab] = useState<"preview" | "code">("preview");
 
@@ -240,6 +242,7 @@ export default function HostingHeroSection() {
         activeTab={activeTab}
         setActiveTab={setActiveTab}
         previewComponent={getPreviewComponent()}
+        hideTopBorder={variant === "default" && isFirstInstance}
       />
 
       {/* Main content - full width to vertical borders */}
