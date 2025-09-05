@@ -42,10 +42,6 @@ export async function highlight(code: string, lang: string = "tsx") {
     const body = trimmedTokens
         .map(line => {
             const isEmpty = line.every(t => t.content.trim() === "");
-            if (isEmpty) {
-                // ❌ Skip rendering empty lines entirely (no number, no gap)
-                return "";
-            }
 
             const inner = line
                 .map(
@@ -56,14 +52,16 @@ export async function highlight(code: string, lang: string = "tsx") {
                 )
                 .join("");
 
-            return `<div class="line"><span class="line-number">${lineNumber++}</span>${inner}</div>`;
+            const lineContent = isEmpty ? "&nbsp;" : inner;
+            return `<div class="line"><span class="line-number">${lineNumber++}</span><span class="line-content">${lineContent}</span></div>`;
         })
         .join("");
 
     return `
-<pre class="shiki bg-card text-card-foreground border-border rounded-md overflow-auto">
-  <code class="font-mono text-sm">
+<pre class="shiki bg-transparent text-card-foreground border-0 rounded-none overflow-visible p-0 m-0">
+  <code class="font-mono text-sm bg-transparent p-0 m-0 block">
     ${body}
+    <div class="line" style="height: 2rem;">&nbsp;</div>
   </code>
 </pre>`;
 }
