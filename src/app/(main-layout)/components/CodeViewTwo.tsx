@@ -17,11 +17,25 @@ export default function CodeViewTwo({
   const [copied, setCopied] = useState(false);
 
   useEffect(() => {
-    highlight(code, language).then(setHtml);
+    // Additional preprocessing to ensure no empty lines
+    const cleanCode = code
+      .split("\n")
+      .filter((line) => line.trim() !== "") // Remove empty lines
+      .join("\n")
+      .trim(); // Remove leading/trailing whitespace
+
+    highlight(cleanCode, language).then(setHtml);
   }, [code, language]);
 
   const handleCopy = async () => {
-    await navigator.clipboard.writeText(code);
+    // Copy the cleaned code without empty lines
+    const cleanCode = code
+      .split("\n")
+      .filter((line) => line.trim() !== "")
+      .join("\n")
+      .trim();
+
+    await navigator.clipboard.writeText(cleanCode);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000); // reset after 2s
   };
@@ -57,9 +71,9 @@ export default function CodeViewTwo({
     h-full
     min-h-[50vh] sm:min-h-[60vh]
     max-h-[65vh] sm:max-h-[70vh]
+    overflow-x-auto lg:overflow-x-hidden
     overflow-y-auto
-    overflow-x-hidden
-    px-2 sm:px-4 pb-6 sm:pb-8 pt-8 sm:pt-10
+    px-2 sm:px-4 pb-6 sm:pb-8 pt-4 sm:pt-6
     [&_pre]:h-full
     [&_pre]:overflow-visible
     [&_pre]:bg-transparent
@@ -67,21 +81,23 @@ export default function CodeViewTwo({
     [&_pre]:rounded-none
     [&_pre]:p-0
     [&_pre]:m-0
-    [&_pre]:whitespace-pre-wrap
-    [&_pre]:word-break-break-word
+    [&_pre]:whitespace-nowrap lg:[&_pre]:whitespace-pre-wrap
+    [&_pre]:lg:word-break-break-word
     [&_code]:block
     [&_code]:p-0
     [&_code]:m-0
     [&_code]:bg-transparent
     [&_code]:w-full
+    [&_code]:min-w-max lg:[&_code]:min-w-0
     [&_.line]:flex
     [&_.line]:items-start
     [&_.line]:min-h-[1.25em]
     [&_.line]:leading-relaxed
     [&_.line]:py-0.5
+    [&_.line]:whitespace-nowrap lg:[&_.line]:whitespace-normal
     [&_.line-number]:w-8 sm:[&_.line-number]:w-10
     [&_.line-number]:text-right
-    [&_.line-number]:mr-3 sm:[&_.line-number]:mr-4
+    [&_.line-number]:mr-4 sm:[&_.line-number]:mr-6
     [&_.line-number]:text-muted-foreground
     [&_.line-number:hover]:text-foreground
     [&_.line-number]:select-none
@@ -90,10 +106,10 @@ export default function CodeViewTwo({
     [&_.line-number]:leading-relaxed
     [&_.line-content]:flex-1
     [&_.line-content]:min-w-0
-    [&_.line-content]:break-words
     [&_.line-content]:leading-relaxed
-    [&_.line-content]:whitespace-pre-wrap
-    [&_.line-content]:word-break-break-word
+    [&_.line-content]:whitespace-nowrap lg:[&_.line-content]:whitespace-pre-wrap
+    [&_.line-content]:lg:word-break-break-word
+    [&_.line-content]:lg:break-words
   "
         dangerouslySetInnerHTML={{ __html: html }}
       />
