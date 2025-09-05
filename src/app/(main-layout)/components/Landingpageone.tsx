@@ -293,15 +293,6 @@ export default function HeroSection() {
                   </h3>
 
                   <div className="relative w-full">
-                    <div
-                      className="absolute left-0 top-0 bottom-0 w-20 z-10"
-                      style={{ background: "var(--lp-partner-fade-left)" }}
-                    ></div>
-                    <div
-                      className="absolute right-0 top-0 bottom-0 w-20 z-10"
-                      style={{ background: "var(--lp-partner-fade-right)" }}
-                    ></div>
-
                     <div className="overflow-x-auto scrollbar-hide">
                       <div className="flex items-center py-4 animate-scroll min-w-max">
                         {[

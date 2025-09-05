@@ -236,10 +236,6 @@
   --lp-dot: #3b82f6;
   /* blue-500 */
 
-  /* Partner section */
-  --lp-partner-fade-left: linear-gradient(to right, #f8fafc, transparent);
-  --lp-partner-fade-right: linear-gradient(to left, #f8fafc, transparent);
-
   /* Bottom banner */
   --lp-bottom-banner-bg: #ffffff;
   --lp-bottom-banner-border: #e5e7eb;
@@ -287,10 +283,6 @@
   /* blue-400/30 */
   --lp-dot: #60a5fa;
   /* blue-400 */
-
-  /* Partner section */
-  --lp-partner-fade-left: linear-gradient(to right, oklch(0.141 0.005 285.823), transparent);
-  --lp-partner-fade-right: linear-gradient(to left, oklch(0.141 0.005 285.823), transparent);
 
   /* Bottom banner */
   --lp-bottom-banner-bg: #1e293b;
